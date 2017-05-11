@@ -7,10 +7,11 @@ int main() {
     error(1, errno, "must be run as root\r\n");
 
   char *cmd = "/usr/bin/ipmitool";
-  char *args[3];
-  args[0] = "lan";
-  args[1] = "print";
-  args[2] = NULL;
+  char *args[4];
+  args[0] = cmd;
+  args[1] = "lan";
+  args[2] = "print";
+  args[3] = NULL;
 
   execvp(cmd, args);
 }
